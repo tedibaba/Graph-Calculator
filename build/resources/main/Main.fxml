@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="945.0" prefWidth="1118.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainController">
+   <children>
+      <Label layoutX="402.0" layoutY="15.0" text="Quadratic Calculator" />
+      <TextField fx:id="squaredTerm" layoutX="338.0" layoutY="64.0" prefHeight="25.0" prefWidth="52.0" />
+      <TextField fx:id="constantTerm" layoutX="543.0" layoutY="64.0" prefHeight="25.0" prefWidth="52.0" />
+      <TextField layoutX="446.0" layoutY="64.0" prefHeight="25.0" prefWidth="52.0" fx:id="xTerm" />
+      <Label layoutX="390.0" layoutY="54.0" text="x² + ">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="498.0" layoutY="54.0" text="x + ">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="54.0" text="y=">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <LineChart fx:id="graph" axisSortingPolicy="NONE" createSymbols="false" layoutX="53.0" layoutY="120.0" legendSide="TOP" legendVisible="false" prefHeight="788.0" prefWidth="772.0">
+        <xAxis>
+            <NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" autoRanging="true" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" />
+        </yAxis>
+      </LineChart>
+      <Button layoutX="925.0" layoutY="64.0" mnemonicParsing="false" onAction="#sketchGraph" text="Sketch Graph" />
+      <Button layoutX="923.0" layoutY="347.0" mnemonicParsing="false" onAction="#clearGraph" text="Clear graph" />
+      <TextField fx:id="minDomainOfPlane" layoutX="901.0" layoutY="160.0" onKeyTyped="#changeMinDomainOfPlane" prefHeight="25.0" prefWidth="61.0" promptText="min" />
+      <Label layoutX="905.0" layoutY="142.0" text="Change min x value seen" />
+      <TextField fx:id="maxDomainOfPlane" layoutX="974.0" layoutY="162.0" onKeyTyped="#changeMaxDomainOfPlane" prefHeight="25.0" prefWidth="61.0" promptText="max" />
+      <Label layoutX="929.0" layoutY="231.0" text="Domain of graph" />
+      <TextField fx:id="minDomainOfGraph" layoutX="901.0" layoutY="268.0" onKeyTyped="#changeMinDomain" prefHeight="25.0" prefWidth="61.0" />
+      <TextField fx:id="maxDomainOfGraph" layoutX="971.0" layoutY="268.0" onKeyTyped="#changeMaxDomain" prefHeight="25.0" prefWidth="61.0" />
+      <ListView fx:id="functions" layoutX="871.0" layoutY="473.0" prefHeight="200.0" prefWidth="200.0" />
+      <Label layoutX="948.0" layoutY="456.0" text="Equations" />
+      <Label fx:id="errorMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="877.0" layoutY="756.0" prefHeight="75.0" prefWidth="183.0" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+
+
+   </children>
+</AnchorPane>
